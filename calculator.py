@@ -5,7 +5,7 @@ import sys
 
 class Calculator:
     def __init__(self, design_file):
-        self.design = design_file
+        self.design = loadUi(design_file)
         self.window_settings()
         self.btn_manager()
 
@@ -104,6 +104,6 @@ class Calculator:
 
 if __name__ == '__main__':
     qApp = QApplication(sys.argv)
-    calculator = Calculator(loadUi('design.ui'))
+    calculator = Calculator('design.ui')
     calculator.show()
     qApp.exec_()
